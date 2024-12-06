@@ -1,9 +1,9 @@
-import { createAnthropic } from '@ai-sdk/anthropic';
+import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 
 export function getAnthropicModel(apiKey: string) {
-  const anthropic = createAnthropic({
-    apiKey,
+  const bedrock = createAmazonBedrock({
+    region: 'us-west-1'
   });
 
-  return anthropic('claude-3-5-sonnet-20240620');
+  return bedrock('anthropic.claude-3-5-sonnet-20241022-v2:0');
 }
